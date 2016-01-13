@@ -4,7 +4,6 @@ module Sunspot
     # Abstract class for function queries.
     #
     class FunctionQuery 
-      include RSolr::Char
     end
 
     #
@@ -29,7 +28,7 @@ module Sunspot
       end
 
       def to_s
-        "#{escape(@field.indexed_name)}"
+        "#{Util.escape(@field.indexed_name)}"
       end
     end
 
